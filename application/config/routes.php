@@ -43,7 +43,7 @@ $route['404_override'] = '';
 
 $route['sleep'] = "first/zzz";
 $route['show/(:num)'] = "first/gimme/$1";
-$route['wise/([a-z]+)'] = "$1";
+$route['(^[a-zA-Z]{4})/bingo'] = "bingo";
 $route['lock/(:any)/(:any)'] = "welcome/shucks";
 $route['dunno'] = function() {
     $source = './data/surprise.jpg'; // an image you provide
@@ -53,5 +53,6 @@ $route['dunno'] = function() {
     readfile($source); // dish it
     die(); // and we don't have to go any further
 };
+$route['comp(:num)/(:any)'] = "wise/bingo";
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
